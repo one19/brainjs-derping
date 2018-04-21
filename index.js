@@ -1,10 +1,10 @@
 let trainedNet;
 
-function encode(arg) {
-  return arg.split('').map(x => (x.charCodeAt(0) / 255));
+const encode = inputString => {
+  return inputString.split('').map(x => (x.charCodeAt(0) / 255));
 }
 
-function processTrainingData(data) {
+const processTrainingData = data => {
   return data.map(d => {
     return {
       input: encode(d.input),
@@ -13,19 +13,20 @@ function processTrainingData(data) {
   })
 }
 
-function train(data) {
+const train = (data) => {
   let net = new brain.NeuralNetwork();
   net.train(processTrainingData(data));
   trainedNet = net.toFunction();
   console.log('Finished training...');
 };
 
-function execute(input) {
+const execute = (input) => {
   let results = trainedNet(encode(input));
+  console.log('results', results)
   let output;
   results.trump > results.kardashian ? output = 'Trump' : output = 'Kardashian';
   return output;
 }
 
 train(trainingData);
-console.log(execute('Whether we are Republican or Democrat, we must now focus on strengthening Background Checks!'));
+console.log(execute('henlo widget! this is teh bombz'));
