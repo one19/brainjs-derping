@@ -1,6 +1,7 @@
 Stolen, WORD FOR WORD from [this medium article](https://itnext.io/you-can-build-a-neural-network-in-javascript-even-if-you-dont-really-understand-neural-networks-e63e12713a3)
 
 # Brain.js testing
+[![Maintenance status](https://raw.githubusercontent.com/one19/project-status/master/cache/brainjs-derping/maintained.svg?sanitize=true)](https://github.com/one19/project-status)
 
 ### TODO:
 1. If we're deadset on using the browser, use it for real with an input for the tweet
